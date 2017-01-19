@@ -27,7 +27,97 @@ html, body{
 
 .controls{
     width:50%;
+    padding:50px;
     float:left;
     height:100%
     border:1px solid black;
+}
+
+.ptr{
+    width:30px;
+    height:30px;
+    border:1px solid black;
+    position:absolute;
+    padding-top:5px;
+}
+
+#head{
+    top:5%;
+    left:5%;
+}
+
+.arrow:after{
+    color: black;
+    border-left: 6px solid;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    right: -5.5px;
+}
+
+.arrow{
+    background-color: black;
+    width: 80px;
+    height: 12px;
+    right:-29px;
+    display: inline-block;
+    position: relative;
+}
+
+.node{
+    width:170px;
+    height:100px;
+    border:1px solid black;
+    position:absolute;
+    padding-top:5px;
+    top:12px;
+}
+
+.data{
+    width:50px;
+    height:50px;
+    border:1px solid black;
+    text-align: center;
+    font-size:2em;
+    line-height: 1.8em;
+    margin-top:15px;
+    margin-left:15px;
+}
+
+.label{
+    color:black;
+    font-size:0.5em;
+    display:block;
+}
+
+.next{
+    position:absolute;
+    right:10px;
+    top:35%;
+}
+
+#node1{
+    left:212px;
+}
+
+#node2{
+    left:458px;
+}
+
+#node3{
+    left:704px;
+}
+
+#node4{
+    left:950px;
+}
+
+#node5{
+    left:1196px;
+}
+
+#node6{
+    left:1442px;
 }
