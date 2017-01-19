@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $.ajax({
+        url:"reference.c",
+        method:"GET",
+        cache:true,
+        success:function(data){
+            $(".code").append(data);
+        }
+    });
+});
