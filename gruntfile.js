@@ -1,8 +1,9 @@
+var path = require('path');
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         jshint:{
-            all:['assets/js/*.js']
+            all:['gruntfile.js','assets/js/*.js']
         },
         cssmin:{
             build:{
@@ -23,13 +24,45 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        }
-
+        },
+		gitadd:{
+			task: {
+				options: {
+					force: true,
+					all: true,
+					cwd: path.resolve()
+				}
+			}
+		},
+		gitcommit: {
+			your_target: {
+				options: {
+					message: 'Repository updated on ' + grunt.template.today(),
+					allowEmpty: true
+				}
+			}
+		},gitpush: {
+			task: {
+				options: {
+					remote: 'origin',
+					branch: 'master',
+					cwd: path.resolve()
+				}
+			}
+		}
     });
-
+	
+	grunt.registerTask('git', [
+		'gitadd','gitcommit','gitpush'
+	]);
+	
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
-    grunt.registerTask('default', ['jshint', 'cssmin', 'uglify']);
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-git');
+	
+    grunt.registerTask('default', [
+		'jshint', 'cssmin', 'uglify', 'git'
+	]);
 };
