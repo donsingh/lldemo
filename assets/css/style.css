@@ -2,6 +2,9 @@ html, body{
     height: 100%;
     overflow: hidden;
 }
+.btn{
+    border-radius: 0px !important;
+}
 .stage{
   width:100%;
   min-height:40%;
@@ -23,15 +26,20 @@ html, body{
   background-color: #cccccc;
 }
 
+.strong{
+    font-weight:bold;
+}
+
 .code{
     width:50%;
     background-color:#e3e3e3;
     float:left;
-    height:100%;
+    min-height:305px;
     font-family: "Courier New";
     white-space: pre-line;
     overflow-y:scroll;;
     overflow-x: hidden;
+    padding:25px;
 }
 
 .controls{
@@ -41,22 +49,26 @@ html, body{
     height:100%
     border:1px solid black;
 }
+.wrapper{
+    position:absolute;
+    font-size:0.8em;
+    text-align:center;
+}
 
+#head{
+    top:9%;
+    left:5%;
+}
 .ptr{
-    width:30px;
+    width:50px;
     height:30px;
     border:1px solid black;
-    position:absolute;
+    position:relative;
     padding-top:5px;
 }
 
 #trav{
     top:25%;
-    left:5%;
-}
-
-#head{
-    top:5%;
     left:5%;
 }
 
@@ -75,30 +87,31 @@ html, body{
     background-color: black;
     width: 80px;
     height: 12px;
-    right:-29px;
-    display: inline-block;
+    right:-50px;
     position: relative;
+    float:left;
+    top:-45px;
 }
 
 .arrow2:after{
     color: black;
-    border-left: 7.5px solid transparent;
-    border-right: 7.5px solid transparent;
-    border-bottom: 7.5px solid;
+    border-left: 13.5px solid transparent;
+    border-right: 13.5px solid transparent;
+    border-bottom: 13.5px solid;
     display: inline-block;
     content: '';
     position: absolute;
     top: -7px;
+    left: -7px;
 }
 
 .arrow2{
     background-color: black;
-    width: 50%;
-    height: 90px;
-    right:-25%;
-    top:-410%;
-    display: inline-block;
-    position: relative;
+    width: 25%;
+    height: 75px;
+    right:40%;
+    top:-137%;
+    position: absolute;;
 }
 
 .node{
@@ -107,7 +120,7 @@ html, body{
     border:1px solid black;
     position:absolute;
     padding-top:5px;
-    top:12px;
+    top:5%;
 }
 
 .data{
@@ -125,12 +138,23 @@ html, body{
     color:black;
     font-size:0.5em;
     display:block;
+    clear:both;
+}
+
+.bName{
+    font-size:0.7em;
+    position:absolute;
+    margin-top:-65px;
 }
 
 .next{
     position:absolute;
     right:10px;
     top:35%;
+}
+
+.media{
+    display:none;
 }
 
 #node1{
