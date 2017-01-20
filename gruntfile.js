@@ -12,10 +12,14 @@ module.exports = function(grunt) {
             }
         },
         uglify:{
+			options:{
+				compress: true,
+				preserveComments:false
+			},
             my_target:{
                 files:{
                     'assets/js/compressed/app.min.js' : [
-                        'assets/js/*.js'
+                        'assets/js/app.js'
                     ]
                 }
             }
