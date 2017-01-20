@@ -1,4 +1,5 @@
 var path = require('path');
+
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -34,32 +35,7 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        },
-		gitadd:{
-			task: {
-				options: {
-					force: true,
-					all: true,
-					cwd: path.resolve()
-				}
-			}
-		},
-		gitcommit: {
-			your_target: {
-				options: {
-					message: 'Repository updated on ' + grunt.template.today(),
-					allowEmpty: true
-				}
-			}
-		},gitpush: {
-			task: {
-				options: {
-					remote: 'origin',
-					branch: 'master',
-					cwd: path.resolve()
-				}
-			}
-		},
+        }
 		watch: {
 			// scripts: {
 				// files: ['assets/**/*'],
@@ -89,17 +65,15 @@ module.exports = function(grunt) {
     });
 	
 	
-	
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-git');
-	grunt.loadNpmTasks("grunt-phplint");
-	grunt.loadNpmTasks('grunt-newer');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-clear');
-	grunt.loadNpmTasks('grunt-shell');
+	require('load-grunt-tasks')(grunt);
+    // grunt.loadNpmTasks('grunt-contrib-jshint');
+    // grunt.loadNpmTasks('grunt-contrib-cssmin');
+    // grunt.loadNpmTasks('grunt-contrib-uglify');
+	// grunt.loadNpmTasks('grunt-contrib-imagemin');
+	// grunt.loadNpmTasks("grunt-phplint");
+	// grunt.loadNpmTasks('grunt-newer');
+	// grunt.loadNpmTasks('grunt-contrib-watch');
+	// grunt.loadNpmTasks('grunt-shell');
 	
 	grunt.registerTask('cls', ['shell']);
     grunt.registerTask('test', [
@@ -115,3 +89,5 @@ module.exports = function(grunt) {
 	]);
 	
 };
+
+//check https://github.com/sindresorhus/jshint-stylish

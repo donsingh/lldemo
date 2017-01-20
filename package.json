@@ -29,7 +29,8 @@
     "grunt-htmlhint": "^0.9.13",
     "grunt-newer": "^1.2.0",
     "grunt-phplint": "^0.1.0",
-    "grunt-shell": "^2.1.0"
+    "grunt-shell": "^2.1.0",
+    "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {}
 }
