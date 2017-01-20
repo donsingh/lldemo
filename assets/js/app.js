@@ -1,8 +1,32 @@
 var nodes = [];
 var ctr = 0;
+var c = 1;
 $(document).ready(function(){
+
+    insert(ctr);
+    insert(ctr);
+    insert(ctr);
+    insert(ctr);
+    insert(ctr);
+
     $(".btn-primary").on("click", function(){
-        insert(ctr);
+        move_trav(c++);
+    });
+
+    $(".stage").on("mouseenter", "div", function(){
+        $(this).addClass("light");
+    });
+
+    $(".stage").on("mouseleave", "div", function(){
+        $(this).removeClass("light");
+    });
+
+    $(".stage").on("click", ".node", function(){
+          $(".step h2").text( $(this).attr("id") );
+    });
+
+    $(".stage").on("click", ".data", function(){
+          $(".step h2").text( "DATA = "+ $(this).text() );
     });
 });
 
@@ -10,23 +34,21 @@ $(document).ready(function(){
 function insert(step)
 {
     var data;
-    switch(step){
-        case 0:
-              $("#head").append("<div class='arrow'></div>");
-              ctr++;
-              break;
-        case 1:
-              // var data = prompt("Insert what number?");
-              data = 5;
-              create_node(ctr,data);
-              ctr++;
-              break;
-        case 2:
-              data = 15;
-              create_node(ctr,data);
-              ctr++;
-              break;
+    if(step === 0){
+        $("#head").append("<div class='arrow'></div>");
+    }else{
+        data = 15;
+        create_node(ctr,data);
     }
+    ctr++;
+}
+
+function move_trav(step)
+{
+    var tarLeft = $("#node"+step).children(".ptr").offset().left;
+    $("#trav").animate({
+        "left" : tarLeft
+    });
 }
 
 function create_node(count, data)

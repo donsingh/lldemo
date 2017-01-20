@@ -7,9 +7,18 @@ html, body{
   min-height:40%;
 }
 
+.light{
+  -webkit-box-shadow: 0 0 6px 4px rgba(255,255,0,0.38);
+     -moz-box-shadow: 0 0 6px 4px rgba(255,255,0,0.38);
+          box-shadow: 0 0 6px 4px rgba(255,255,0,0.38);
+}
+.step{
+  width:100%;
+  height:10%;
+}
 .logic{
   width:100%;
-  min-height:60%;
+  min-height:50%;
   overflow: hidden;
   background-color: #cccccc;
 }
@@ -41,6 +50,11 @@ html, body{
     padding-top:5px;
 }
 
+#trav{
+    top:25%;
+    left:5%;
+}
+
 #head{
     top:5%;
     left:5%;
@@ -62,6 +76,27 @@ html, body{
     width: 80px;
     height: 12px;
     right:-29px;
+    display: inline-block;
+    position: relative;
+}
+
+.arrow2:after{
+    color: black;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
+    border-bottom: 7.5px solid;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: -7px;
+}
+
+.arrow2{
+    background-color: black;
+    width: 50%;
+    height: 90px;
+    right:-25%;
+    top:-410%;
     display: inline-block;
     position: relative;
 }
